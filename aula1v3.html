@@ -1,0 +1,22 @@
+<Script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></Script>
+
+<div id= app>
+    <p>{{titulo}}</p>
+    <p>{{saudacao()}}</p>
+    <a v-bind:href="link">Terra</a>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            titulo:'Usando VueJS',
+            link: 'https://www.terra.com.br/'
+        },
+        methods: {
+            saudacao: function(){
+                return 'Bem vindo'
+            }
+        }
+    })
+</script>

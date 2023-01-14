@@ -1,0 +1,24 @@
+<Script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></Script>
+
+<div id= app>
+    <p>{{titulo}}</p>
+    <p>{{contador}}</p>
+    <button v-on:click="somar">Somar 1</button>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            titulo:"Usando VueJS",
+            contador: 0
+        },
+              methods: {
+                somar(){
+                    console.log(event)
+                    this.contador++
+                }
+            
+        }
+    })
+</script>

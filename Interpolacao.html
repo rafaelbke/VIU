@@ -1,0 +1,40 @@
+<Script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></Script>
+
+<div id= app>
+    <p>{{titulo}}</p>
+    <input type="text" v-model="titulo">
+    <p>{{contador * 2}}</p>
+    <p>{{contador > 10 ? 'maior do que 10' : 'menor do que 10'}}</p>
+    <button v-on:click="somar">Somar 1</button>
+    <button v-on:click="subtrair">subtrair 1</button>
+    <P v-on:mousemove="atualizarXY">Mouse:{{x}} e {{y}}</P>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            titulo:"Usando VueJS",
+            contador: 0,
+            x:0,
+            y:0,
+
+        },
+              methods: {
+                somar(){
+                    console.log(event)
+                    this.contador++
+                },
+                subtrair(){
+                    console.log(event)
+                    this.contador--
+                },
+                atualizarXY(event){
+                    console.log(event)
+                    this.x =event.clientX
+                    this.y =event.clientY
+                }
+            
+        }
+    })
+</script>

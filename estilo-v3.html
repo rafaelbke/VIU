@@ -1,0 +1,72 @@
+<Script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></Script>
+
+<style>
+    #caixa{
+        display: flex;
+        justify-content: space-around;
+    }
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color: darksalmon;
+    }
+    .c1{
+        background-color: blue;
+    }
+    .c2{
+        background-color: aqua;
+    }
+    
+    .c3{
+        background-color: crimson;
+  
+    }
+    .girar{
+        transform: rotate(45deg);
+    }
+
+
+
+</style>
+
+
+<div id="app">
+    <p>{{titulo}}</p>
+    <div id="caixa">
+    
+    <div class="demo":class="estilo1"@click="aplicarC1 =!aplicarC1"></div>
+    <div class="demo"></div>
+    <div class="demo":class="[classCSS,{girar:aplicarGirar}]"></div>
+</div>
+<hr>
+<input type="text" v-model="classCSS">
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            aplicarC1: false,
+            titulo:"Usando VueJS",
+            classCSS:'c1',
+            aplicarGirar:true,
+
+        },
+     
+        methods: {
+            saudacao: function(){
+                return 'Boa semana'
+            }
+        },
+        computed:{
+            estilo1(){
+                return{
+                    c1:this.aplicarC1,
+                    c2:!this.aplicarC1,
+                }
+            }
+
+        }
+        
+    })
+</script>
